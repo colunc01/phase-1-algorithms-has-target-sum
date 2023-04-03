@@ -1,17 +1,37 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (i=0;i<array.length;i++)
+  {
+    var num1=array[i];
+    for (j=i+1;j<array.length;j++)
+    {
+      var num2=array[j];
+      if (num1+num2 === target)
+      {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  Have to do a lot of addition to see if the array at some point equals the target. 
+  Best way to do this is starting with the first element of the array and going down the line.
 */
 
 /* 
   Add your pseudocode here
+  for array length (ensures that every number is viewed)
+  for array length add the second-nth numbers of array to find the target
+  No reason to go through the whole array once its found so return true the instance the target is reached.
+
 */
 
 /*
   Add written explanation of your solution here
+  i just go through 2 for loops to add each number to find the target in the array.
 */
 
 // You can run `node index.js` to view these console logs
